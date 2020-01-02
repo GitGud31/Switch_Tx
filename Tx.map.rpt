@@ -1,0 +1,398 @@
+Analysis & Synthesis report for Tx
+Sat May 25 16:38:18 2019
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Source assignments for fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2
+ 11. Parameter Settings for User Entity Instance: fifo:U1|scfifo:scfifo_component
+ 12. scfifo Parameter Settings by Entity Instance
+ 13. Port Connectivity Checks: "fifo:U1"
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-------------------------------+------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Sat May 25 16:38:18 2019    ;
+; Quartus II Version            ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                 ; Tx                                       ;
+; Top-level Entity Name         ; Tx                                       ;
+; Family                        ; Stratix II                               ;
+; Logic utilization             ; N/A                                      ;
+;     Combinational ALUTs       ; 221                                      ;
+;     Dedicated logic registers ; 1,528                                    ;
+; Total registers               ; 1528                                     ;
+; Total pins                    ; 22                                       ;
+; Total virtual pins            ; 0                                        ;
+; Total block memory bits       ; 128                                      ;
+; DSP block 9-bit elements      ; 0                                        ;
+; Total PLLs                    ; 0                                        ;
+; Total DLLs                    ; 0                                        ;
++-------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                          ; Tx                 ; Tx                 ;
+; Family name                                                    ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto DSP Block Replacement                                     ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                            ;
++----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+
+; Tx.vhd                           ; yes             ; User VHDL File                    ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/Tx.vhd                 ;
+; manchester_comb.vhd              ; yes             ; User VHDL File                    ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/manchester_comb.vhd    ;
+; fifo.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/fifo.vhd               ;
+; scfifo.tdf                       ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/scfifo.tdf                 ;
+; a_regfifo.inc                    ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_regfifo.inc              ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_dpfifo.inc               ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_i2fifo.inc               ;
+; a_fffifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_fffifo.inc               ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_f2fifo.inc               ;
+; aglobal90.inc                    ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/aglobal90.inc              ;
+; db/scfifo_9q21.tdf               ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/scfifo_9q21.tdf     ;
+; db/a_dpfifo_g031.tdf             ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/a_dpfifo_g031.tdf   ;
+; db/a_fefifo_76e.tdf              ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/a_fefifo_76e.tdf    ;
+; db/cntr_rk7.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/cntr_rk7.tdf        ;
+; db/dpram_uu01.tdf                ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/dpram_uu01.tdf      ;
+; db/altsyncram_2tj1.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/altsyncram_2tj1.tdf ;
+; db/cntr_fkb.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/db/cntr_fkb.tdf        ;
++----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 221   ;
+; Dedicated logic registers                     ; 1528  ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 3     ;
+;                                               ;       ;
+; Total combinational functions                 ; 221   ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 0     ;
+;     -- 6 input functions                      ; 6     ;
+;     -- 5 input functions                      ; 3     ;
+;     -- 4 input functions                      ; 7     ;
+;     -- <=3 input functions                    ; 205   ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 181   ;
+;     -- extended LUT mode                      ; 0     ;
+;     -- arithmetic mode                        ; 40    ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 1557  ;
+;                                               ;       ;
+; Total registers                               ; 1528  ;
+;     -- Dedicated logic registers              ; 1528  ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 779   ;
+;                                               ;       ;
+; I/O pins                                      ; 22    ;
+; Total block memory bits                       ; 128   ;
+; Maximum fan-out node                          ; h     ;
+; Maximum fan-out                               ; 1536  ;
+; Total fan-out                                 ; 10808 ;
+; Average fan-out                               ; 6.08  ;
++-----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                               ;
++-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Tx                                             ; 221 (194)         ; 1528 (1498)  ; 128               ; 0            ; 0       ; 0         ; 0         ; 22   ; 0            ; |Tx                                                                                                                                ;              ;
+;    |fifo:U1|                                    ; 19 (0)            ; 14 (0)       ; 128               ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1                                                                                                                        ; work         ;
+;       |scfifo:scfifo_component|                 ; 19 (0)            ; 14 (0)       ; 128               ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component                                                                                                ; work         ;
+;          |scfifo_9q21:auto_generated|           ; 19 (0)            ; 14 (0)       ; 128               ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated                                                                     ; work         ;
+;             |a_dpfifo_g031:dpfifo|              ; 19 (2)            ; 14 (0)       ; 128               ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo                                                ; work         ;
+;                |a_fefifo_76e:fifo_state|        ; 9 (5)             ; 6 (2)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|a_fefifo_76e:fifo_state                        ; work         ;
+;                   |cntr_rk7:count_usedw|        ; 4 (4)             ; 4 (4)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|a_fefifo_76e:fifo_state|cntr_rk7:count_usedw   ; work         ;
+;                |cntr_fkb:rd_ptr_count|          ; 4 (4)             ; 4 (4)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|cntr_fkb:rd_ptr_count                          ; work         ;
+;                |cntr_fkb:wr_ptr|                ; 4 (4)             ; 4 (4)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|cntr_fkb:wr_ptr                                ; work         ;
+;                |dpram_uu01:FIFOram|             ; 0 (0)             ; 0 (0)        ; 128               ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram                             ; work         ;
+;                   |altsyncram_2tj1:altsyncram2| ; 0 (0)             ; 0 (0)        ; 128               ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2 ; work         ;
+;    |manchester_comb:U2|                         ; 8 (8)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Tx|manchester_comb:U2                                                                                                             ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                              ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1528  ;
+; Number of registers using Synchronous Clear  ; 1495  ;
+; Number of registers using Synchronous Load   ; 1313  ;
+; Number of registers using Asynchronous Clear ; 1511  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1524  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 7 bits    ; 21 ALUTs      ; 7 ALUTs              ; 14 ALUTs               ; Yes        ; |Tx|counter[6]             ;
+; 5:1                ; 15 bits   ; 45 ALUTs      ; 0 ALUTs              ; 45 ALUTs               ; Yes        ; |Tx|reg1[1298]             ;
+; 5:1                ; 1296 bits ; 3888 ALUTs    ; 0 ALUTs              ; 3888 ALUTs             ; Yes        ; |Tx|reg1[1150]             ;
+; 6:1                ; 8 bits    ; 32 ALUTs      ; 0 ALUTs              ; 32 ALUTs               ; Yes        ; |Tx|reg2[4]                ;
+; 6:1                ; 144 bits  ; 576 ALUTs     ; 144 ALUTs            ; 432 ALUTs              ; Yes        ; |Tx|pr[0]                  ;
+; 7:1                ; 24 bits   ; 96 ALUTs      ; 0 ALUTs              ; 96 ALUTs               ; Yes        ; |Tx|reg4[15]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                      ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                       ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:U1|scfifo:scfifo_component ;
++-------------------------+-------------+--------------------------------------+
+; Parameter Name          ; Value       ; Type                                 ;
++-------------------------+-------------+--------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                       ;
+; lpm_width               ; 8           ; Signed Integer                       ;
+; LPM_NUMWORDS            ; 16          ; Signed Integer                       ;
+; LPM_WIDTHU              ; 4           ; Signed Integer                       ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                              ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                              ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                              ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                              ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                              ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                              ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                              ;
+; USE_EAB                 ; ON          ; Untyped                              ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                              ;
+; DEVICE_FAMILY           ; Stratix II  ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                              ;
+; CBXI_PARAMETER          ; scfifo_9q21 ; Untyped                              ;
++-------------------------+-------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                 ;
++----------------------------+---------------------------------+
+; Name                       ; Value                           ;
++----------------------------+---------------------------------+
+; Number of entity instances ; 1                               ;
+; Entity Instance            ; fifo:U1|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                    ;
+;     -- lpm_width           ; 8                               ;
+;     -- LPM_NUMWORDS        ; 16                              ;
+;     -- LPM_SHOWAHEAD       ; OFF                             ;
+;     -- USE_EAB             ; ON                              ;
++----------------------------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:U1"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sat May 25 16:38:05 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Tx -c Tx
+Info: Found 2 design units, including 1 entities, in source file Tx.vhd
+    Info: Found design unit 1: Tx-arch
+    Info: Found entity 1: Tx
+Info: Found 2 design units, including 1 entities, in source file manchester_comb.vhd
+    Info: Found design unit 1: manchester_comb-arch
+    Info: Found entity 1: manchester_comb
+Warning: Can't analyze file -- file C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Tx/MB_Tx.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file BM_Tx.vhd
+    Info: Found design unit 1: BM_Tx-arch
+    Info: Found entity 1: BM_Tx
+Info: Elaborating entity "Tx" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Tx.vhd(23): object "full" assigned a value but never read
+Warning: Using design file fifo.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: fifo-SYN
+    Info: Found entity 1: fifo
+Info: Elaborating entity "fifo" for hierarchy "fifo:U1"
+Info: Elaborating entity "scfifo" for hierarchy "fifo:U1|scfifo:scfifo_component"
+Info: Elaborated megafunction instantiation "fifo:U1|scfifo:scfifo_component"
+Info: Instantiated megafunction "fifo:U1|scfifo:scfifo_component" with the following parameter:
+    Info: Parameter "add_ram_output_register" = "OFF"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_numwords" = "16"
+    Info: Parameter "lpm_showahead" = "OFF"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "4"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Info: Found 1 design units, including 1 entities, in source file db/scfifo_9q21.tdf
+    Info: Found entity 1: scfifo_9q21
+Info: Elaborating entity "scfifo_9q21" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_dpfifo_g031.tdf
+    Info: Found entity 1: a_dpfifo_g031
+Info: Elaborating entity "a_dpfifo_g031" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo"
+Info: Found 1 design units, including 1 entities, in source file db/a_fefifo_76e.tdf
+    Info: Found entity 1: a_fefifo_76e
+Info: Elaborating entity "a_fefifo_76e" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|a_fefifo_76e:fifo_state"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_rk7.tdf
+    Info: Found entity 1: cntr_rk7
+Info: Elaborating entity "cntr_rk7" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|a_fefifo_76e:fifo_state|cntr_rk7:count_usedw"
+Info: Found 1 design units, including 1 entities, in source file db/dpram_uu01.tdf
+    Info: Found entity 1: dpram_uu01
+Info: Elaborating entity "dpram_uu01" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_2tj1.tdf
+    Info: Found entity 1: altsyncram_2tj1
+Info: Elaborating entity "altsyncram_2tj1" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_fkb.tdf
+    Info: Found entity 1: cntr_fkb
+Info: Elaborating entity "cntr_fkb" for hierarchy "fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|cntr_fkb:rd_ptr_count"
+Info: Elaborating entity "manchester_comb" for hierarchy "manchester_comb:U2"
+Info: Implemented 1587 device resources after synthesis - the final resource count might be different
+    Info: Implemented 11 input pins
+    Info: Implemented 11 output pins
+    Info: Implemented 1557 logic cells
+    Info: Implemented 8 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 237 megabytes
+    Info: Processing ended: Sat May 25 16:38:18 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:11
+
+

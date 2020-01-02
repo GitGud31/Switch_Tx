@@ -1,0 +1,10 @@
+v1
+REGISTER_PACKING,REG_PACK_TYPE_FINISHED,ADATA,0,Tx,Tx,
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,21,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[0],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,9,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[1],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,19,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[2],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,20,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[3],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,12,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[4],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,14,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[5],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,15,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[6],
+RAM_PACKING,0,M4K,36,36,SimpleDual,0,17,11110010,fifo:U1|scfifo:scfifo_component|scfifo_9q21:auto_generated|a_dpfifo_g031:dpfifo|dpram_uu01:FIFOram|altsyncram_2tj1:altsyncram2|q_b[7],
