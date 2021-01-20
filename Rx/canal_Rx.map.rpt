@@ -1,0 +1,648 @@
+Analysis & Synthesis report for canal_Rx
+Fri Jul 19 21:12:53 2019
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2
+ 13. Source assignments for canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2
+ 14. Source assignments for altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2
+ 15. Source assignments for canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2
+ 16. Parameter Settings for User Entity Instance: fifo_rx:u1|scfifo:scfifo_component
+ 17. Parameter Settings for User Entity Instance: canal_tx:u5|fifo:U1|scfifo:scfifo_component
+ 18. Parameter Settings for Inferred Entity Instance: altshift_taps:reg_in_rtl_0
+ 19. Parameter Settings for Inferred Entity Instance: canal_tx:u5|altshift_taps:reg_out_rtl_1
+ 20. scfifo Parameter Settings by Entity Instance
+ 21. altshift_taps Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "fifo_rx:u1"
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jul 19 21:12:53 2019    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; canal_Rx                                 ;
+; Top-level Entity Name              ; canal_Rx                                 ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 741                                      ;
+;     Total combinational functions  ; 705                                      ;
+;     Dedicated logic registers      ; 473                                      ;
+; Total registers                    ; 473                                      ;
+; Total pins                         ; 35                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 4,952                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                          ; canal_Rx           ; canal_Rx           ;
+; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------------------------+--------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                             ;
++----------------------------------+-----------------+-----------------------------------+--------------------------------------------------------------------------+
+; detecteur_preambule.vhd          ; yes             ; User VHDL File                    ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/detecteur_preambule.vhd ;
+; canal_Rx.vhd                     ; yes             ; User VHDL File                    ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/canal_Rx.vhd            ;
+; fifo_rx.vhd                      ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/fifo_rx.vhd             ;
+; scfifo.tdf                       ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/scfifo.tdf                  ;
+; a_regfifo.inc                    ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_regfifo.inc               ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_dpfifo.inc                ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_i2fifo.inc                ;
+; a_fffifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_fffifo.inc                ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/a_f2fifo.inc                ;
+; aglobal90.inc                    ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/aglobal90.inc               ;
+; db/scfifo_6d31.tdf               ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/scfifo_6d31.tdf      ;
+; db/a_dpfifo_dj31.tdf             ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/a_dpfifo_dj31.tdf    ;
+; db/a_fefifo_t7f.tdf              ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/a_fefifo_t7f.tdf     ;
+; db/cntr_sj7.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/cntr_sj7.tdf         ;
+; db/dpram_vt01.tdf                ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/dpram_vt01.tdf       ;
+; db/altsyncram_6sj1.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/altsyncram_6sj1.tdf  ;
+; db/cntr_gjb.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/cntr_gjb.tdf         ;
+; decod_manchester.vhd             ; yes             ; Auto-Found VHDL File              ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/decod_manchester.vhd    ;
+; data_generator.vhd               ; yes             ; Auto-Found VHDL File              ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/data_generator.vhd      ;
+; canal_tx.vhd                     ; yes             ; Auto-Found VHDL File              ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/canal_tx.vhd            ;
+; fifo.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/fifo.vhd                ;
+; db/scfifo_uq21.tdf               ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/scfifo_uq21.tdf      ;
+; db/a_dpfifo_5131.tdf             ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/a_dpfifo_5131.tdf    ;
+; db/a_fefifo_u7e.tdf              ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/a_fefifo_u7e.tdf     ;
+; manchester_comb.vhd              ; yes             ; Auto-Found VHDL File              ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/manchester_comb.vhd     ;
+; mux.vhd                          ; yes             ; Auto-Found VHDL File              ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/mux.vhd                 ;
+; altshift_taps.tdf                ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/altshift_taps.tdf           ;
+; altdpram.inc                     ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/altdpram.inc                ;
+; lpm_counter.inc                  ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/lpm_counter.inc             ;
+; lpm_compare.inc                  ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/lpm_compare.inc             ;
+; lpm_constant.inc                 ; yes             ; Megafunction                      ; c:/altera/90/quartus/libraries/megafunctions/lpm_constant.inc            ;
+; db/shift_taps_e4n.tdf            ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/shift_taps_e4n.tdf   ;
+; db/altsyncram_k6b1.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/altsyncram_k6b1.tdf  ;
+; db/cntr_tqf.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/cntr_tqf.tdf         ;
+; db/cmpr_mdc.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/cmpr_mdc.tdf         ;
+; db/cntr_jah.tdf                  ; yes             ; Auto-Generated Megafunction       ; C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/db/cntr_jah.tdf         ;
++----------------------------------+-----------------+-----------------------------------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 741   ;
+;                                             ;       ;
+; Total combinational functions               ; 705   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 228   ;
+;     -- 3 input functions                    ; 67    ;
+;     -- <=2 input functions                  ; 410   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 483   ;
+;     -- arithmetic mode                      ; 222   ;
+;                                             ;       ;
+; Total registers                             ; 473   ;
+;     -- Dedicated logic registers            ; 473   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 35    ;
+; Total memory bits                           ; 4952  ;
+; Maximum fan-out node                        ; h     ;
+; Maximum fan-out                             ; 491   ;
+; Total fan-out                               ; 3979  ;
+; Average fan-out                             ; 3.23  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                  ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                  ; Library Name ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |canal_Rx                                          ; 705 (33)          ; 473 (40)     ; 4952        ; 0            ; 0       ; 0         ; 35   ; 0            ; |canal_Rx                                                                                                                                            ; work         ;
+;    |altshift_taps:reg_in_rtl_0|                    ; 29 (0)            ; 23 (0)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|altshift_taps:reg_in_rtl_0                                                                                                                 ; work         ;
+;       |shift_taps_e4n:auto_generated|              ; 29 (0)            ; 23 (1)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated                                                                                   ; work         ;
+;          |altsyncram_k6b1:altsyncram2|             ; 0 (0)             ; 0 (0)        ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2                                                       ; work         ;
+;          |cntr_jah:cntr3|                          ; 13 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|cntr_jah:cntr3                                                                    ; work         ;
+;          |cntr_tqf:cntr1|                          ; 16 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|cntr_tqf:cntr1                                                                    ; work         ;
+;             |cmpr_mdc:cmpr7|                       ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|cntr_tqf:cntr1|cmpr_mdc:cmpr7                                                     ; work         ;
+;    |canal_tx:u5|                                   ; 340 (277)         ; 282 (235)    ; 2476        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5                                                                                                                                ; work         ;
+;       |altshift_taps:reg_out_rtl_1|                ; 29 (0)            ; 23 (0)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|altshift_taps:reg_out_rtl_1                                                                                                    ; work         ;
+;          |shift_taps_e4n:auto_generated|           ; 29 (0)            ; 23 (1)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated                                                                      ; work         ;
+;             |altsyncram_k6b1:altsyncram2|          ; 0 (0)             ; 0 (0)        ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2                                          ; work         ;
+;             |cntr_jah:cntr3|                       ; 13 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|cntr_jah:cntr3                                                       ; work         ;
+;             |cntr_tqf:cntr1|                       ; 16 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|cntr_tqf:cntr1                                                       ; work         ;
+;                |cmpr_mdc:cmpr7|                    ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|cntr_tqf:cntr1|cmpr_mdc:cmpr7                                        ; work         ;
+;       |fifo:U1|                                    ; 33 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1                                                                                                                        ; work         ;
+;          |scfifo:scfifo_component|                 ; 33 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component                                                                                                ; work         ;
+;             |scfifo_uq21:auto_generated|           ; 33 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated                                                                     ; work         ;
+;                |a_dpfifo_5131:dpfifo|              ; 33 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo                                                ; work         ;
+;                   |a_fefifo_u7e:fifo_state|        ; 18 (11)           ; 9 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|a_fefifo_u7e:fifo_state                        ; work         ;
+;                      |cntr_sj7:count_usedw|        ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|a_fefifo_u7e:fifo_state|cntr_sj7:count_usedw   ; work         ;
+;                   |cntr_gjb:rd_ptr_count|          ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|cntr_gjb:rd_ptr_count                          ; work         ;
+;                   |cntr_gjb:wr_ptr|                ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|cntr_gjb:wr_ptr                                ; work         ;
+;                   |dpram_vt01:FIFOram|             ; 1 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|dpram_vt01:FIFOram                             ; work         ;
+;                      |altsyncram_6sj1:altsyncram2| ; 1 (1)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2 ; work         ;
+;       |mux:U3|                                     ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|canal_tx:u5|mux:U3                                                                                                                         ; work         ;
+;    |data_generator:u4|                             ; 25 (25)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|data_generator:u4                                                                                                                          ; work         ;
+;    |decod_manchester:u2|                           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|decod_manchester:u2                                                                                                                        ; work         ;
+;    |detecteur_preambule:u3|                        ; 238 (238)         ; 95 (95)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|detecteur_preambule:u3                                                                                                                     ; work         ;
+;    |fifo_rx:u1|                                    ; 32 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1                                                                                                                                 ; work         ;
+;       |scfifo:scfifo_component|                    ; 32 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component                                                                                                         ; work         ;
+;          |scfifo_6d31:auto_generated|              ; 32 (0)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated                                                                              ; work         ;
+;             |a_dpfifo_dj31:dpfifo|                 ; 32 (1)            ; 23 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo                                                         ; work         ;
+;                |a_fefifo_t7f:fifo_state|           ; 17 (10)           ; 9 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|a_fefifo_t7f:fifo_state                                 ; work         ;
+;                   |cntr_sj7:count_usedw|           ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|a_fefifo_t7f:fifo_state|cntr_sj7:count_usedw            ; work         ;
+;                |cntr_gjb:rd_ptr_count|             ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|cntr_gjb:rd_ptr_count                                   ; work         ;
+;                |cntr_gjb:wr_ptr|                   ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|cntr_gjb:wr_ptr                                         ; work         ;
+;                |dpram_vt01:FIFOram|                ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram                                      ; work         ;
+;                   |altsyncram_6sj1:altsyncram2|    ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |canal_Rx|fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2          ; work         ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                          ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2|ALTSYNCRAM                                                       ; AUTO ; Simple Dual Port ; 1452         ; 1            ; 1452         ; 1            ; 1452 ; None ;
+; canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2|ALTSYNCRAM                                          ; AUTO ; Simple Dual Port ; 1452         ; 1            ; 1452         ; 1            ; 1452 ; None ;
+; canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024 ; None ;
+; fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2|ALTSYNCRAM          ; AUTO ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; canal_tx:u5|raz4                      ; Merged with canal_tx:u5|raz3           ;
+; canal_tx:u5|sel0                      ; Merged with canal_tx:u5|dec_pr         ;
+; canal_tx:u5|inc                       ; Merged with canal_tx:u5|ld1            ;
+; canal_tx:u5|sel1                      ; Merged with canal_tx:u5|dec1           ;
+; canal_tx:u5|pr[143]                   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 5 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 473   ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 343   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 355   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                          ;
++-----------------------------------------------------------------------------+---------+
+; Inverted Register                                                           ; Fan out ;
++-----------------------------------------------------------------------------+---------+
+; altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|dffe4              ; 1       ;
+; canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|dffe4 ; 1       ;
+; Total number of inverted registers = 2                                      ;         ;
++-----------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |canal_Rx|canal_tx:u5|reg1[11]                      ;
+; 3:1                ; 142 bits  ; 284 LEs       ; 142 LEs              ; 142 LEs                ; Yes        ; |canal_Rx|canal_tx:u5|pr[28]                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |canal_Rx|canal_tx:u5|sel[0]                        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |canal_Rx|detecteur_preambule:u3|rx_BYTEcounter[28] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |canal_Rx|canal_tx:u5|reg4[12]                      ;
+; 7:1                ; 61 bits   ; 244 LEs       ; 122 LEs              ; 122 LEs                ; Yes        ; |canal_Rx|detecteur_preambule:u3|rx_BITcounter[14]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                         ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                          ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for altshift_taps:reg_in_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2 ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                            ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for canal_tx:u5|altshift_taps:reg_out_rtl_1|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2 ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                         ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo_rx:u1|scfifo:scfifo_component ;
++-------------------------+-------------+-----------------------------------------+
+; Parameter Name          ; Value       ; Type                                    ;
++-------------------------+-------------+-----------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                          ;
+; lpm_width               ; 8           ; Signed Integer                          ;
+; LPM_NUMWORDS            ; 128         ; Signed Integer                          ;
+; LPM_WIDTHU              ; 7           ; Signed Integer                          ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                 ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                 ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                 ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                 ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                 ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                 ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                 ;
+; USE_EAB                 ; ON          ; Untyped                                 ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                 ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                 ;
+; CBXI_PARAMETER          ; scfifo_6d31 ; Untyped                                 ;
++-------------------------+-------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: canal_tx:u5|fifo:U1|scfifo:scfifo_component ;
++-------------------------+-------------+--------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                             ;
++-------------------------+-------------+--------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                   ;
+; lpm_width               ; 8           ; Signed Integer                                   ;
+; LPM_NUMWORDS            ; 128         ; Signed Integer                                   ;
+; LPM_WIDTHU              ; 7           ; Signed Integer                                   ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                          ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                          ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                          ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                          ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                          ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                          ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                          ;
+; USE_EAB                 ; ON          ; Untyped                                          ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                          ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                          ;
+; CBXI_PARAMETER          ; scfifo_uq21 ; Untyped                                          ;
++-------------------------+-------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altshift_taps:reg_in_rtl_0 ;
++----------------+----------------+-------------------------------------------+
+; Parameter Name ; Value          ; Type                                      ;
++----------------+----------------+-------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                   ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                   ;
+; TAP_DISTANCE   ; 1454           ; Untyped                                   ;
+; WIDTH          ; 1              ; Untyped                                   ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                   ;
+; CBXI_PARAMETER ; shift_taps_e4n ; Untyped                                   ;
++----------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: canal_tx:u5|altshift_taps:reg_out_rtl_1 ;
++----------------+----------------+--------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                   ;
++----------------+----------------+--------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                ;
+; TAP_DISTANCE   ; 1454           ; Untyped                                                ;
+; WIDTH          ; 1              ; Untyped                                                ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                ;
+; CBXI_PARAMETER ; shift_taps_e4n ; Untyped                                                ;
++----------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                             ;
++----------------------------+---------------------------------------------+
+; Name                       ; Value                                       ;
++----------------------------+---------------------------------------------+
+; Number of entity instances ; 2                                           ;
+; Entity Instance            ; fifo_rx:u1|scfifo:scfifo_component          ;
+;     -- FIFO Type           ; Single Clock                                ;
+;     -- lpm_width           ; 8                                           ;
+;     -- LPM_NUMWORDS        ; 128                                         ;
+;     -- LPM_SHOWAHEAD       ; OFF                                         ;
+;     -- USE_EAB             ; ON                                          ;
+; Entity Instance            ; canal_tx:u5|fifo:U1|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                ;
+;     -- lpm_width           ; 8                                           ;
+;     -- LPM_NUMWORDS        ; 128                                         ;
+;     -- LPM_SHOWAHEAD       ; OFF                                         ;
+;     -- USE_EAB             ; ON                                          ;
++----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                  ;
++----------------------------+-----------------------------------------+
+; Name                       ; Value                                   ;
++----------------------------+-----------------------------------------+
+; Number of entity instances ; 2                                       ;
+; Entity Instance            ; altshift_taps:reg_in_rtl_0              ;
+;     -- NUMBER_OF_TAPS      ; 1                                       ;
+;     -- TAP_DISTANCE        ; 1454                                    ;
+;     -- WIDTH               ; 1                                       ;
+; Entity Instance            ; canal_tx:u5|altshift_taps:reg_out_rtl_1 ;
+;     -- NUMBER_OF_TAPS      ; 1                                       ;
+;     -- TAP_DISTANCE        ; 1454                                    ;
+;     -- WIDTH               ; 1                                       ;
++----------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo_rx:u1"                                                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; empty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Fri Jul 19 21:12:40 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off canal_Rx -c canal_Rx
+Info: Found 2 design units, including 1 entities, in source file detecteur_preambule.vhd
+    Info: Found design unit 1: detecteur_preambule-arec
+    Info: Found entity 1: detecteur_preambule
+Info: Found 2 design units, including 1 entities, in source file canal_Rx.vhd
+    Info: Found design unit 1: canal_Rx-arch
+    Info: Found entity 1: canal_Rx
+Info: Elaborating entity "canal_Rx" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at canal_Rx.vhd(30): object "empty" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at canal_Rx.vhd(36): object "r12" assigned a value but never read
+Warning: Using design file fifo_rx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: fifo_rx-SYN
+    Info: Found entity 1: fifo_rx
+Info: Elaborating entity "fifo_rx" for hierarchy "fifo_rx:u1"
+Info: Elaborating entity "scfifo" for hierarchy "fifo_rx:u1|scfifo:scfifo_component"
+Info: Elaborated megafunction instantiation "fifo_rx:u1|scfifo:scfifo_component"
+Info: Instantiated megafunction "fifo_rx:u1|scfifo:scfifo_component" with the following parameter:
+    Info: Parameter "add_ram_output_register" = "OFF"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_numwords" = "128"
+    Info: Parameter "lpm_showahead" = "OFF"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "7"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Info: Found 1 design units, including 1 entities, in source file db/scfifo_6d31.tdf
+    Info: Found entity 1: scfifo_6d31
+Info: Elaborating entity "scfifo_6d31" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_dpfifo_dj31.tdf
+    Info: Found entity 1: a_dpfifo_dj31
+Info: Elaborating entity "a_dpfifo_dj31" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo"
+Info: Found 1 design units, including 1 entities, in source file db/a_fefifo_t7f.tdf
+    Info: Found entity 1: a_fefifo_t7f
+Info: Elaborating entity "a_fefifo_t7f" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|a_fefifo_t7f:fifo_state"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_sj7.tdf
+    Info: Found entity 1: cntr_sj7
+Info: Elaborating entity "cntr_sj7" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|a_fefifo_t7f:fifo_state|cntr_sj7:count_usedw"
+Info: Found 1 design units, including 1 entities, in source file db/dpram_vt01.tdf
+    Info: Found entity 1: dpram_vt01
+Info: Elaborating entity "dpram_vt01" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_6sj1.tdf
+    Info: Found entity 1: altsyncram_6sj1
+Info: Elaborating entity "altsyncram_6sj1" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_gjb.tdf
+    Info: Found entity 1: cntr_gjb
+Info: Elaborating entity "cntr_gjb" for hierarchy "fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|cntr_gjb:rd_ptr_count"
+Warning: Using design file decod_manchester.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: decod_manchester-bhv
+    Info: Found entity 1: decod_manchester
+Info: Elaborating entity "decod_manchester" for hierarchy "decod_manchester:u2"
+Info: Elaborating entity "detecteur_preambule" for hierarchy "detecteur_preambule:u3"
+Warning (10540): VHDL Signal Declaration warning at detecteur_preambule.vhd(16): used explicit default value for signal "tester1" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at detecteur_preambule.vhd(17): used explicit default value for signal "tester2" because signal was never assigned a value
+Warning: Using design file data_generator.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: data_generator-bhv
+    Info: Found entity 1: data_generator
+Info: Elaborating entity "data_generator" for hierarchy "data_generator:u4"
+Warning (10036): Verilog HDL or VHDL warning at data_generator.vhd(23): object "r1" assigned a value but never read
+Warning: Using design file canal_tx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: canal_tx-arch
+    Info: Found entity 1: canal_tx
+Info: Elaborating entity "canal_tx" for hierarchy "canal_tx:u5"
+Warning (10036): Verilog HDL or VHDL warning at canal_tx.vhd(51): object "r23" assigned a value but never read
+Warning: Using design file fifo.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: fifo-SYN
+    Info: Found entity 1: fifo
+Info: Elaborating entity "fifo" for hierarchy "canal_tx:u5|fifo:U1"
+Info: Elaborating entity "scfifo" for hierarchy "canal_tx:u5|fifo:U1|scfifo:scfifo_component"
+Info: Elaborated megafunction instantiation "canal_tx:u5|fifo:U1|scfifo:scfifo_component"
+Info: Instantiated megafunction "canal_tx:u5|fifo:U1|scfifo:scfifo_component" with the following parameter:
+    Info: Parameter "add_ram_output_register" = "OFF"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_numwords" = "128"
+    Info: Parameter "lpm_showahead" = "OFF"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "7"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Info: Found 1 design units, including 1 entities, in source file db/scfifo_uq21.tdf
+    Info: Found entity 1: scfifo_uq21
+Info: Elaborating entity "scfifo_uq21" for hierarchy "canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_dpfifo_5131.tdf
+    Info: Found entity 1: a_dpfifo_5131
+Info: Elaborating entity "a_dpfifo_5131" for hierarchy "canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo"
+Info: Found 1 design units, including 1 entities, in source file db/a_fefifo_u7e.tdf
+    Info: Found entity 1: a_fefifo_u7e
+Info: Elaborating entity "a_fefifo_u7e" for hierarchy "canal_tx:u5|fifo:U1|scfifo:scfifo_component|scfifo_uq21:auto_generated|a_dpfifo_5131:dpfifo|a_fefifo_u7e:fifo_state"
+Warning: Using design file manchester_comb.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: manchester_comb-arch
+    Info: Found entity 1: manchester_comb
+Info: Elaborating entity "manchester_comb" for hierarchy "canal_tx:u5|manchester_comb:U2"
+Warning: Entity "mux" obtained from "C:/Users/AARIZOU/Documents/M1_ESE/S2/ERP/VHDL/Rx/mux.vhd" instead of from Quartus II megafunction library
+Warning: Using design file mux.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: mux-amux
+    Info: Found entity 1: mux
+Info: Elaborating entity "mux" for hierarchy "canal_tx:u5|mux:U3"
+Info: Inferred 2 megafunctions from design logic
+    Info: Inferred altshift_taps megafunction from the following design logic: "reg_in[1455]~0"
+        Info: Parameter NUMBER_OF_TAPS set to 1
+        Info: Parameter TAP_DISTANCE set to 1454
+        Info: Parameter WIDTH set to 1
+    Info: Inferred altshift_taps megafunction from the following design logic: "canal_tx:u5|reg_out[1455]~0"
+        Info: Parameter NUMBER_OF_TAPS set to 1
+        Info: Parameter TAP_DISTANCE set to 1454
+        Info: Parameter WIDTH set to 1
+Info: Elaborated megafunction instantiation "altshift_taps:reg_in_rtl_0"
+Info: Instantiated megafunction "altshift_taps:reg_in_rtl_0" with the following parameter:
+    Info: Parameter "NUMBER_OF_TAPS" = "1"
+    Info: Parameter "TAP_DISTANCE" = "1454"
+    Info: Parameter "WIDTH" = "1"
+Info: Found 1 design units, including 1 entities, in source file db/shift_taps_e4n.tdf
+    Info: Found entity 1: shift_taps_e4n
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_k6b1.tdf
+    Info: Found entity 1: altsyncram_k6b1
+Info: Found 1 design units, including 1 entities, in source file db/cntr_tqf.tdf
+    Info: Found entity 1: cntr_tqf
+Info: Found 1 design units, including 1 entities, in source file db/cmpr_mdc.tdf
+    Info: Found entity 1: cmpr_mdc
+Info: Found 1 design units, including 1 entities, in source file db/cntr_jah.tdf
+    Info: Found entity 1: cntr_jah
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info: Implemented 808 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
+    Info: Implemented 32 output pins
+    Info: Implemented 755 logic cells
+    Info: Implemented 18 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 239 megabytes
+    Info: Processing ended: Fri Jul 19 21:12:53 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
+
+

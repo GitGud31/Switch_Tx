@@ -1,9 +1,6 @@
-# Documentation fr 
-## Description
+﻿1. **Introduction:**
+
 Ce projet consiste à faire la réalisation d’un commutateur réseau Ethernet à quatre voies, à base de cartes FPGA.
-
-
-1. **Introduction:**
 
 Un réseau Ethernet se base sur le transfert d'une trame comportant huit champs dont le nombre d'octets varie entre 27 et 91 octets. Le nombre total d'octets de la trame dépend de la taille du champ données qui varie entre 0 et 64 octets.
 
@@ -21,9 +18,9 @@ G32x=x32+x26+x23+x22+x16+x12+x11+x10+x8+x5+x4+x2+1
 
 Son code hexadécimal correspondant est x"104C11D35". 
 
-**Figure  SEQ Figure  Circuit CRC-32**
+**Figure  SEQ Figure \\* ARABIC 1. Circuit CRC-32**
 
-**Figure  SEQ Figure  Circuit CRC-32**.
+**Figure  SEQ Figure \\* ARABIC 1. Circuit CRC-32**.
 
 
 
@@ -31,8 +28,9 @@ L'entité permettant de décrire ce circuit en VHDL et de le simuler sur QUARTUS
 
 
 
-**Figure  SEQ Figure  Banc d'essai du CRC-32**
-![CircuitCRC32\_BM.jpg](documentation/rapport\_final.004.jpeg)
+**Figure  SEQ Figure \\* ARABIC 2. Banc d'essai du CRC-32**
+
+**Figure  SEQ Figure \\* ARABIC 2. Banc d'essai du CRC-32**![CircuitCRC32\_BM.jpg](rapport\_final.004.jpeg)
 
 Le circuit CRC comporte 4 entrées: D\_in pour recevoir la donnée en commençant par le LSB, H, reset, Enable qui, si elle est à l'état haut, le circuit fonctionne, sinon, les sorties des bascules sont figées, et l'entrée RAZ (remise à zéro). Le bloc comporte une sortie: r\_out, un vecteur de 32 bits qui permet d'afficher les sorties des bascules soit le code CRC-32.
 
@@ -44,18 +42,15 @@ L'entité globale (banc d'essai + CRC-32) ne comporte que les  entrée load, h, 
 
 Afin de tester et simuler notre description, nous avons chargé la constante FRAME par la donnée de 18 octets suivante **x" 4142 4344 4546 4748 58AA 1518 1314 1712 1419"**, et avons maintenu le signal 'stcrc' à l'état haut durant 144 périodes d'horloge. Nous avons obtenu le résultat de la figure 3. 
 
-**Figure  SEQ Figure . Résultat de la simulation du générateur CRC**
+**Figure  SEQ Figure \\* ARABIC 3. Résultat de la simulation du générateur CRC**
 
+**Figure  SEQ Figure \\* ARABIC 3. Résultat de la simulation du générateur CRC**![BM\_CodeurCRC32.JPG](rapport\_final.006.jpeg)
 
+![frame\_crc.JPG](rapport\_final.007.jpeg)Afin de vérifier le résultat de la simulation, nous avons utilisé un générateur en ligne permettant de préciser le polynôme générateur. Comme ce calculateur en ligne injecte les bits par le MSB, il nous a fallu inverser la donnée dans notre constante FRAME en considérant le bit de gauche comme étant le LSB:
 
-![BM\_CodeurCRC32.JPG](documentation/rapport\_final.006.jpeg)
+**Figure  SEQ Figure \\* ARABIC 4. Calcul du CRC-32 par un générateur rn ligne**
 
-![frame\_crc.JPG](documentation/rapport\_final.007.jpeg)Afin de vérifier le résultat de la simulation, nous avons utilisé un générateur en ligne permettant de préciser le polynôme générateur. Comme ce calculateur en ligne injecte les bits par le MSB, il nous a fallu inverser la donnée dans notre constante FRAME en considérant le bit de gauche comme étant le LSB:
-
-**Figure  SEQ Figure Calcul du CRC-32 par un générateur rn ligne**
-
-
-![CRC\_online.JPG](documentation/rapport\_final.009.jpeg)Nous avons obtenu les mêmes résultats comme le montre la figure 4.
+**Figure  SEQ Figure \\* ARABIC 4. Calcul du CRC-32 par un générateur rn ligne**![CRC\_online.JPG](rapport\_final.009.jpeg)Nous avons obtenu les mêmes résultats comme le montre la figure 4.
 
 
 
@@ -84,19 +79,17 @@ Le tableau suivant résume les sorties vers lesquelles la donnée reçue sur l'u
 | :-: | :-: | :-: | :-: | :-: |
 |Sortie vers laquelle Pi va être acheminéé|ToP1|ToP2|ToP3|ToP4|
 
+**Figure  SEQ Figure \\* ARABIC 5. Schéma du circuit d'aiguillage**
 
-**Figure  SEQ Figure Schéma du circuit d'aiguillage**
-
-![aiguilleur.JPG](documentation/rapport\_final.011.jpeg)
+**Figure  SEQ Figure \\* ARABIC 5. Schéma du circuit d'aiguillage**![aiguilleur.JPG](rapport\_final.011.jpeg)
 
 L'entité permettant de décrire ce circuit en VHDL et de le simuler sur QUARTUS est représentée par le schéma (banc d'essai) de la figure 6:
 
 - Les registres Reg\_in1, Reg\_in2, Reg\_in3 et Reg\_in4, sont des registres à décalage de 16 bits (nous avons choisi une donnée de deux octets pour la simulation mais nous pouvons très bien augmenter la taille), ils seront chargés par la donnée à diriger vers les registres reg\_out en activant l'entrée Load. 
 
+**Figure  SEQ Figure \\* ARABIC 6. Banc d'essai du circuit d'aiguillage**
 
-**Figure  SEQ Figure  Banc d'essai du circuit d'aiguillage**
-
-![banc\_aiguilleur.JPG](documentation/rapport\_final.013.jpeg)Les sorties du circuit sont à 16 bits ils permettent d'afficher les valeurs reçues sur les ToPi.
+**Figure  SEQ Figure \\* ARABIC 6. Banc d'essai du circuit d'aiguillage**![banc\_aiguilleur.JPG](rapport\_final.013.jpeg)Les sorties du circuit sont à 16 bits ils permettent d'afficher les valeurs reçues sur les ToPi.
 
 - Résultats de la simulation:
 
@@ -125,17 +118,17 @@ Après simulation, nous avons obtenu les mêmes résultats. La figure 7 montre l
 
 Nous remarquons aussi que dans le cas où les signaux de sélection sont égaux, le signal d'erreur est activé.
 
-**Figure  SEQ Figure  résultats de la simulation du circuit d'aiguillage**
+**Figure  SEQ Figure \\* ARABIC 7. résultats de la simulation du circuit d'aiguillage**
 
+**Figure  SEQ Figure \\* ARABIC 7. résultats de la simulation du circuit d'aiguillage**
 
 1. **Canal Rx:**
 
 Ce circuit permet de recevoir la trame bit par bit codée en Manchester, de la convertir en binaire puis de la stocker dans une fifo sous forme de paquets d'octets.
 
+**Figure  SEQ Figure \\* ARABIC 8. Circuit "data\_path" du canal Rx**
 
-**Figure  SEQ Figure  Circuit "data\_path" du canal Rx**
-
-![img131.jpg](documentation/rapport\_final.017.jpeg)La figure 8 présente le circuit récepteur (data\_path).
+**Figure  SEQ Figure \\* ARABIC 8. Circuit "data\_path" du canal Rx**![img131.jpg](rapport\_final.017.jpeg)La figure 8 présente le circuit récepteur (data\_path).
 
 
 - Reg\_in: Ce registre comporte 1456 bits et permet de contenir la trame reçue.
@@ -178,9 +171,9 @@ Cet algorithme est ensuite traduit en tableau binaire représenté par le tablea
 |Eof|111      7|000      0||R12|
 |Not (eof)|111      7|011      3|Raz, dec1, dec2|R13|
 
-**Figure  SEQ Figure  Algorithme numérique du séquenceur du canal Rx**
+**Figure  SEQ Figure \\* ARABIC 9. Algorithme numérique du séquenceur du canal Rx**
 
-![img132.jpg](documentation/rapport\_final.019.jpeg) 
+**Figure  SEQ Figure \\* ARABIC 9. Algorithme numérique du séquenceur du canal Rx**![img132.jpg](rapport\_final.019.jpeg) 
 
 Après avoir décri ce tableau en VHDL, nous avons simulé son fonctionnement tout en affichant une sortie indiquant les états afin de vérifier le déroulement du séquenceur.
 
@@ -208,9 +201,23 @@ A la fin de la simulation, nous avons activé le signal "read" de la fifo afin d
 
 Nous avons obtenu les résultats présentés par la figure 10.
 
-![rx.JPG](documentation/rapport\_final.020.jpeg)Nous remarquons que les octets stockés dans la fifo correspondent aux données qui ont été transmises par data\_generator, le circuit est donc fonctionnel.
+![rx.JPG](rapport\_final.020.jpeg)Nous remarquons que les octets stockés dans la fifo correspondent aux données qui ont été transmises par data\_generator, le circuit est donc fonctionnel.
 
-**Figure  SEQ Figure Résultats de la simulation du canal Rx**
+**Figure  SEQ Figure \\* ARABIC 10. Résultats de la simulation du canal Rx**
+
+**Figure  SEQ Figure \\* ARABIC 10. Résultats de la simulation du canal Rx**
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 1. **Canal Tx:**
@@ -223,17 +230,25 @@ Ce circuit est contrôlé par le séquenceur dont l'algorithme numérique est re
 
 L'algorithme est ensuite traduit en tableau binaire représenté par le tableau 3. 
 
-![tx.JPG](documentation/rapport\_final.022.jpeg)
+![tx.JPG](rapport\_final.022.jpeg)
 
-**Figure  SEQ Figure Circuit canal Tx**
+**Figure  SEQ Figure \\* ARABIC 11. Circuit canal Tx**
+
+**Figure  SEQ Figure \\* ARABIC 11. Circuit canal Tx**
 
 
 
 
 
-**Figure  SEQ Figure Algorithme numérique du séquenceur Tx**
 
-![organigramme\_erp - Page 2.png](documentation/rapport\_final.025.png)![organigramme\_erp - Page 1.png](documentation/rapport\_final.026.png)![organigramme\_erp - Page 3.png](documentation/rapport\_final.027.png)
+
+
+
+
+
+**Figure  SEQ Figure \\* ARABIC 12. Algorithme numérique du séquenceur Tx**
+
+**Figure  SEQ Figure \\* ARABIC 12. Algorithme numérique du séquenceur Tx**![organigramme\_erp - Page 2.png](rapport\_final.025.png)![organigramme\_erp - Page 1.png](rapport\_final.026.png)![organigramme\_erp - Page 3.png](rapport\_final.027.png)
 
 
 

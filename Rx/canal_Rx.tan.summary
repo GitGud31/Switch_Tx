@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.847 ns
+From           : rd
+To             : fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2|ram_block3a0~portb_address_reg6
+From Clock     : --
+To Clock       : h
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.649 ns
+From           : fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|dpram_vt01:FIFOram|altsyncram_6sj1:altsyncram2|ram_block3a0~portb_address_reg6
+To             : fifo_out[5]
+From Clock     : h
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.324 ns
+From           : rd
+To             : fifo_rx:u1|scfifo:scfifo_component|scfifo_6d31:auto_generated|a_dpfifo_dj31:dpfifo|a_fefifo_t7f:fifo_state|b_full
+From Clock     : --
+To Clock       : h
+Failed Paths   : 0
+
+Type           : Clock Setup: 'h'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 116.85 MHz ( period = 8.558 ns )
+From           : detecteur_preambule:u3|rx_BYTEcounter[7]
+To             : detecteur_preambule:u3|match
+From Clock     : h
+To Clock       : h
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
